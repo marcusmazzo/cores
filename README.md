@@ -36,3 +36,41 @@ Estando tudo correto a tela abaixo deverá ser exibida:
 
 ![Aplicação](image-2.png)
 
+
+## API
+Para que o front-end funcione é preciso atender aos seguintes requisitos:
+
+1. Possuir um método GET que retorne um conjunto de "COR".
+2. Possuir um método GET que recebe, como parâmetro da URL (path variable), o ID de uma "COR".
+3. Possuir um método POST que recebe, como entrada no corpo do pedido (request body), uma "COR".
+4. Possuir um método PUT que recebe, como entrada no corpo do pedido (request body), uma "COR" e recebe, como parâmetro da URL (path variable), o ID de uma "COR".
+5. Possuir um método DELETE que recebe, como parâmetro da URL (path variable), o ID de uma "COR".
+
+Outros pontos a considerar:
+1. Os métodos "GET" são métodos de consulta.
+2. O método "POST" é um método para persistência (salvar).
+3. O método "PUT" é uma método para atualização.
+4. O método "DELETE" é um método para exclusão.
+
+A entrada "COR" deve possuir o seguinte formato:
+
+MediaType: JSON
+``` 
+{
+    "id":number,
+    "descricao":text
+}
+
+```
+
+Observação:
+
+Para que a "COR" funcione corretamente, a descrição utilizada deverá ser em Inglês, exemplo:
+
+``` 
+{
+    "id":1,
+    "descricao":"white"
+}
+
+```
