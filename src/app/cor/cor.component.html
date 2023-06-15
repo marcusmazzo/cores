@@ -1,0 +1,68 @@
+<h1>SALVAR - MÉTODO POST</h1>
+<div>
+    <table>
+        <tr>
+            <td style="font-size: 18px;">ID</td>
+            <td><input type="number" [(ngModel)]="corSave.id"><br></td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px;">DESCRIÇÃO</td>
+            <td style="font-size: 18px;"><input type="text" [(ngModel)]="corSave.descricao"><br></td>
+        </tr>
+    </table>
+    <button (click)="save()">Salvar</button>
+</div>
+<hr>
+<H1>LISTA - MÉTODO GET SEM FILTROS </H1>
+<table style="width: 85%;">
+    <thead>
+        <tr>
+            <td style="font-size: 18px;">ID</td>
+            <td style="font-size: 18px;">Descricao</td>
+            <td style="font-size: 18px;">Cor</td>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let cor of cores">
+                <td style="font-size: 18px;">{{cor.id}}</td>
+                <td style="font-size: 18px;">{{cor.descricao}}</td>
+                <td [ngStyle] = "{'background-color': cor.descricao}" style="width:50px; border: 1px solid black; font-size: 18px;">&nbsp;</td>
+            </tr>
+    </tbody>
+</table>
+<hr>
+<h1>BUSCAR - MÉTODO GET COM FILTROS</h1>
+<table>
+    <tr>
+        <td style="font-size: 18px;">ID</td>
+        <td style="font-size: 18px;"><input type="text" [(ngModel)]="id"></td>
+    </tr>
+</table>
+<button (click)="byId()">Buscar</button>
+
+<BR>
+<H1>POR ID</H1>
+<p style="font-size: 18px;">id: {{cor.id}}</p>
+<p style="font-size: 18px;">descricao: {{cor.descricao}}</p>
+<p [ngStyle] = "{'background-color': cor.descricao}">&nbsp;</p> 
+
+<hr>
+<h1>ATUALIZAR - MÉTODO PUT</h1>
+<div>
+    <table>
+        <tr>
+            <td style="font-size: 18px;">ID</td>
+            <td style="font-size: 18px;"><input type="number" [(ngModel)]="corUpdate.id"><br></td>
+        </tr>
+        <tr>
+            <td style="font-size: 18px;">DESCRIÇÃO</td>
+            <td style="font-size: 18px;"><input type="text" [(ngModel)]="corUpdate.descricao"><br></td>
+        </tr>
+    </table>
+    <button (click)="update()">Atualizar</button>
+</div>
+
+<hr>
+<h1>EXCLUIR - MÉTODO DELETE</h1>
+ID: <input type="text" [(ngModel)]="idDelete">
+<button (click)="delete()">Excluir</button>
